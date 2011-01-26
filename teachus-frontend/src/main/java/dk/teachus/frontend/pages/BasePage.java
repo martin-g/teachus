@@ -22,6 +22,7 @@ import org.apache.wicket.behavior.HeaderContributor;
 import org.apache.wicket.behavior.SimpleAttributeModifier;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.MarkupStream;
+import org.apache.wicket.markup.html.CSSPackageResource;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -48,9 +49,9 @@ public abstract class BasePage extends WebPage {
 	boolean attached = false;
 	
 	public BasePage() {
-		add(HeaderContributor.forCss(Resources.CSS_ANDREAS09));
-		add(HeaderContributor.forCss(Resources.CSS_SCREEN));
-		add(HeaderContributor.forCss(Resources.CSS_PRINT, "print"));
+		add(CSSPackageResource.getHeaderContribution(Resources.CSS_ANDREAS09));
+		add(CSSPackageResource.getHeaderContribution(Resources.CSS_SCREEN));
+		add(CSSPackageResource.getHeaderContribution(Resources.CSS_PRINT, "print"));
 		
 		Theme theme = getTheme();
 		
@@ -122,19 +123,19 @@ public abstract class BasePage extends WebPage {
 			case BLUE:
 				break;
 			case RED:
-				add(HeaderContributor.forCss(Resources.CSS_ANDREAS09_RED));
+				add(CSSPackageResource.getHeaderContribution(Resources.CSS_ANDREAS09_RED));
 				break;
 			case ORANGE:
-				add(HeaderContributor.forCss(Resources.CSS_ANDREAS09_ORANGE));
+				add(CSSPackageResource.getHeaderContribution(Resources.CSS_ANDREAS09_ORANGE));
 				break;
 			case BLACK:
-				add(HeaderContributor.forCss(Resources.CSS_ANDREAS09_BLACK));
+				add(CSSPackageResource.getHeaderContribution(Resources.CSS_ANDREAS09_BLACK));
 				break;
 			case GREEN:
-				add(HeaderContributor.forCss(Resources.CSS_ANDREAS09_GREEN));
+				add(CSSPackageResource.getHeaderContribution(Resources.CSS_ANDREAS09_GREEN));
 				break;
 			case PURPLE:
-				add(HeaderContributor.forCss(Resources.CSS_ANDREAS09_PURPLE));
+				add(CSSPackageResource.getHeaderContribution(Resources.CSS_ANDREAS09_PURPLE));
 				break;
 		}
 	}

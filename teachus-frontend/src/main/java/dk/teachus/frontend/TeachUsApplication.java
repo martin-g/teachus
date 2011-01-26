@@ -34,6 +34,7 @@ import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.ajax.WicketAjaxReference;
 import org.apache.wicket.authorization.strategies.CompoundAuthorizationStrategy;
+import org.apache.wicket.javascript.DefaultJavascriptCompressor;
 import org.apache.wicket.markup.html.AjaxServerAndClientTimeFilter;
 import org.apache.wicket.markup.html.WicketEventReference;
 import org.apache.wicket.protocol.http.WebApplication;
@@ -106,7 +107,7 @@ public class TeachUsApplication extends WebApplication {
 		getApplicationSettings().setInternalErrorPage(InternalErrorPage.class);
 		getExceptionSettings().setUnexpectedExceptionDisplay(IExceptionSettings.SHOW_INTERNAL_ERROR_PAGE);
 		
-		getResourceSettings().setStripJavascriptCommentsAndWhitespace(false);
+		getResourceSettings().setJavascriptCompressor(new DefaultJavascriptCompressor());
 		
 		if (DEVELOPMENT.equals(getConfigurationType())) {
 			getRequestCycleSettings().addResponseFilter(new AjaxServerAndClientTimeFilter());

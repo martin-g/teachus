@@ -29,6 +29,7 @@ import org.apache.wicket.behavior.HeaderContributor;
 import org.apache.wicket.behavior.SimpleAttributeModifier;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.IHeaderResponse;
+import org.apache.wicket.markup.html.JavascriptPackageResource;
 import org.apache.wicket.markup.html.image.Image;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -166,8 +167,8 @@ public class ImageBox extends Panel {
 		super(id);
 		
 		add(new JQueryBehavior());
-		add(HeaderContributor.forJavaScript(ImageBox.JS_IUTIL_1_2));
-		add(HeaderContributor.forJavaScript(ImageBox.JS_IMAGEBOX_1_2));
+		add(JavascriptPackageResource.getHeaderContribution(ImageBox.JS_IUTIL_1_2));
+		add(JavascriptPackageResource.getHeaderContribution(ImageBox.JS_IMAGEBOX_1_2));
 		
 		add(new HeaderContributor(new ImageBoxConfiguration()));
 		add(CSS_IMAGEBOX);
